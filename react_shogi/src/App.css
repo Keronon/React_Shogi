@@ -1,0 +1,52 @@
+#_App {
+    font-size: 18pt;
+}
+
+header, footer {
+    background-color: #333333;
+
+    padding: 0.5em 0;
+    text-align: center;
+    color: #eeeeee;
+}
+
+/* ==================== */
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+/* ==================== */
+
+#_logo {
+    display: block;
+    width: 10%;
+    height: auto;
+    margin: 0 auto;
+    fill: url(#_gradi);
+}
+#_logo:hover #_gradi stop { animation: coloring 2s infinite; }
+#_logo:hover #_gradi .stop-1 { }
+#_logo:hover #_gradi .stop-2 { animation-delay: 0.2s; }
+#_logo:hover #_gradi .stop-3 { animation-delay: 0.4s; }
+
+@keyframes coloring {
+    10% { stop-color: #eeeeee; }
+    20% { stop-color: #eeeeee; }
+    30% { stop-color: #eeeeee; }
+    40% { stop-color: #eeeeee; }
+    50% { stop-color: #ee3333; }
+    60% { stop-color: #33ee33; }
+    70% { stop-color: #3333ee; }
+    80% { stop-color: #33eeee; }
+    90% { stop-color: #ee33ee; }
+   100% { stop-color: #eeee33; }
+}
+
+#_board {
+    aspect-ratio: 1 / 1;
+}
