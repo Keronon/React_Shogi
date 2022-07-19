@@ -4,10 +4,22 @@
 
 header, footer {
     background-color: #333333;
-
+    /*!*/
     padding: 0.5em 0;
     text-align: center;
     color: #eeeeee;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#_content {
+    display: flex;
+    align-items: stretch;
+    /*!*/
+    padding-top: 5vh;
 }
 
 /* ==================== */
@@ -17,22 +29,23 @@ header, footer {
 }
 
 h1 {
-    font-size: 24pt;
+    font-size: 20pt;
 }
 
 /* ==================== */
 
 #_logo {
     display: block;
-    width: 10%;
+    width: 2.5em;
     height: auto;
     margin: 0 auto;
+    /*!*/
     fill: url(#_gradi);
 }
-#_logo:hover #_gradi stop { animation: coloring 2s infinite; }
+#_logo:hover #_gradi  stop   { animation: coloring 2s infinite; }
 #_logo:hover #_gradi .stop-1 { }
-#_logo:hover #_gradi .stop-2 { animation-delay: 0.2s; }
-#_logo:hover #_gradi .stop-3 { animation-delay: 0.4s; }
+#_logo:hover #_gradi .stop-2 { animation-delay: 0.25s; }
+#_logo:hover #_gradi .stop-3 { animation-delay: 0.50s; }
 
 @keyframes coloring {
     10% { stop-color: #eeeeee; }
@@ -47,6 +60,106 @@ h1 {
    100% { stop-color: #eeee33; }
 }
 
+/* ==================== */
+
 #_board {
-    aspect-ratio: 1 / 1;
+    flex-grow: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /*!*/
+    background-color: burlywood;
+}
+.board_line {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+}
+.board_piece {
+    box-sizing: border-box;
+    border: 1px solid black;
+    /*!*/
+    flex-grow: 1;
+    aspect-ratio: 33.3 / 36.4;
+    margin: 0 -1px -1px 0;
+}
+    .board_piece:hover {
+        background-color: #eeee3333;
+    }
+    .board_piece:active {
+        background-color: #3333ee33;
+    }
+
+.comodai {
+    box-sizing: border-box;
+    border: 1px solid black;
+    /*!*/
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*!*/
+    background-color: burlywood;
+    width: min-content;
+    margin: 0 3vw;
+    /*!*/
+    padding: 1vw 0;
+}
+#_sente {
+    margin-right: 20vw;
+    flex-direction: column-reverse;
+}
+#_gote {
+    margin-left: 20vw;
+}
+.taked_piece {
+    box-sizing: border-box;
+    border: 1px solid black;
+    /*!*/
+    background-color: darkorange;
+    aspect-ratio: 33.3 / 36.4;
+    height: 4.7vh;
+    margin: 0.5vw;
+}
+    .taked_piece:hover {
+        background-color: orange;
+    }
+    .taked_piece:active {
+        background-color: orangered;
+    }
+
+/* ==================== */
+
+@media screen and (orientation: portrait)
+{
+    #_content {
+        flex-direction: column;
+        /*!*/
+        padding: 5vh;
+    }
+
+    #_board {
+        margin: 2vh 0;
+    }
+
+    .comodai {
+        flex-direction: row;
+        /*!*/
+        width: 100%;
+        margin: 0;
+        /*!*/
+        padding: 1vw;
+    }
+    #_sente {
+        flex-direction: row-reverse;
+        /*!*/
+        margin-right: 0;
+    }
+    #_gote {
+        margin-left: 0;
+    }
+    .taked_piece {
+        height: 3.5vh;
+        margin: 1vw;
+    }
 }
